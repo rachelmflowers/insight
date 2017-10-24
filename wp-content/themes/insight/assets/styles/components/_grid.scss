@@ -1,0 +1,9 @@
+// Grid system
+.main {
+    flex: 1 0 auto;
+    width: calc(100% - 18rem);
+}
+.sidebar {
+    width: 18rem;
+    max-width: 25%;
+}

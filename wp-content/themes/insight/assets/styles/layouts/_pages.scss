@@ -1,0 +1,118 @@
+.main {
+    
+    .page:not(.home) & { padding: 1rem 4rem; }
+}
+
+    
+.main-content { 
+    flex: 1 0 auto;
+}
+
+    
+@inclue media-breakpoint-up(md) {
+    
+    .page-footer { display: flex; }
+}
+
+.welcome-message,
+.contact-area,
+.chat-area {
+    border-top: 4px solid $black;
+    
+    @inclue media-breakpoint-up(md) {
+        width: 50%;
+        float: left;
+    }
+    
+    p:last-of-type { margin-bottom: 0; }
+}
+
+.welcome-message,
+.chat-area {
+    
+    @inclue media-breakpoint-up(md) {
+        border-right: 4px solid $black;
+    }
+}
+
+.home {
+    
+    .main {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    
+    .main-content { padding: 1rem 4rem; }
+    
+    .key-features {
+        padding: 0;
+        margin: 0;
+        color: $white;
+        list-style: none;
+        background: $indigo;
+        border-top: 4px solid $black;
+        
+        @include media-breakpoint-up(md) {
+            padding-right: 5rem;
+            padding-left: 5rem;
+        }
+        
+        &:after {
+            display: table;
+            clear: both;
+            content: '';
+        }
+        
+        li {
+            padding: 0;
+            margin-bottom: .5rem;
+            width: 25%;
+            float: left;
+            line-height: 1.3;
+            text-align: center;
+            
+            .icon {
+                margin: -2.5rem auto .5rem;
+                width: 5rem;
+                height: 5rem;
+                display: block;
+        
+                @include media-breakpoint-up(md) {
+                    margin-top: -4rem;
+                    margin-bottom: 1rem;
+                    width: 7rem;
+                    height: 7rem;
+                }
+            }
+        }
+    }
+    
+    .widget.welcome-message {
+        padding: .75rem 2rem;
+        color: $white;
+        background: $blue;
+    }
+    
+    .widget.contact-area {
+        position: relative;
+        padding: 1rem 2rem 1rem 7rem;
+        align-self: flex-end;
+        color:$white;
+        background: $green;
+        
+        &:before {
+            position: absolute;
+            left: 1rem;
+            content: '';
+            width: 5rem;
+            height: 5rem;
+            display: block;
+            background: url(#{$customer-service-icon}), no-repeat;
+            background-size: contain;
+        }
+        
+        p {
+            font-size: 0.85rem;
+        }
+    }
+}

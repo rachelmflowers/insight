@@ -1,0 +1,72 @@
+body {
+    font-size: 1rem;
+    
+    * {
+        -webkit-font-smoothing: antialiased!important;
+        -moz-osx-font-smoothing: grayscale!important;
+    }
+}
+
+html {
+    font-size: 80%;
+    
+    @include media-breakpoint-up(sm) { font-size: 85%; }
+    
+    @include media-breakpoint-up(md) { font-size: 90%; }
+    
+    @include media-breakpoint-up(lg) { font-size: 95%; }
+    
+    @include media-breakpoint-up(xl) { font-size: 100%; }
+}
+
+small {
+    font-size: .68rem;
+}
+
+h4,
+h5,
+h6 {
+    font-family: $font-family-base;
+}
+
+.row {
+    flex-flow: row wrap;
+    align-content: stretch;
+}
+
+.container.wrap {
+    min-height: calc(100vh - 13rem);
+    display: flex;
+    flex-flow: column nowrap;
+    border: $border-width solid $black;
+    border-radius: 0.78rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.page-template-default {
+    
+    .main { padding: 4rem 5rem; }
+}
+
+form {
+    
+    label { 
+        display: block;
+        line-height: 1;
+    }
+    
+    .input {
+        padding: .35rem .5rem;
+        line-height: 1;
+        background: $white;
+        border: 3px solid $black;
+        border-radius: 4px;
+        box-shadow: none;
+    }
+}
+

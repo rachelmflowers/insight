@@ -1,0 +1,235 @@
+.login-box {
+    padding: 2rem 2rem 1rem;
+    margin: 0 auto;
+    width: 35vw;
+    min-width: 300px;
+    color: $white;
+    text-align: center;
+    border: 7px solid $black;
+        
+    .providers-page &,
+    .agents-page & {
+        color: $black;
+    }
+
+    .members-page & { background: $purple; }
+
+    .employers-page & { background: $blue; }
+
+    .providers-page & { background: $teal; }
+
+    .agents-page & { background: $green; }
+
+    h2 { margin-bottom: 1rem; }
+
+    a {
+        color: $white;
+        text-transform: uppercase;
+        
+        .providers-page &,
+        .agents-page & {
+            color: $black;
+        }
+    }
+
+    > a {
+
+        &:first-of-type { float: left; }
+
+        &:last-of-type { float: right; }
+    }
+    
+    .alert {
+        margin-bottom: 3rem;
+    }
+
+    .um {
+        margin-bottom: 0 !important;
+        
+        + a,
+        + a + a {
+            margin-top: -1.6rem;
+        }
+    }
+    
+    .um-register { display: none; }
+
+    .um-form {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        font-size: 1rem !important;
+
+        > p { text-align: left; }
+
+        a.um-link-alt { 
+            color: $white !important;
+        
+            .providers-page &,
+            .agents-page & {
+                color: $black !important;
+            }
+        }
+
+        #um-submit-btn {
+            padding: 0.4rem 2rem !important;
+            margin: 0 auto 2rem;
+            min-width: 0 !important;
+            text-transform: uppercase !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+        }
+    }
+
+    .um-form-field { width: 100%; }
+}
+
+.category { 
+    position: relative;
+
+//    &.logged-out {
+//        height: 100vh;
+//        overflow: hidden;
+//    }
+    
+    .main {
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .main {
+        flex-flow: column nowrap;
+    }
+    
+    .main-content {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        color: $white;
+    }
+    
+    .welcome {
+        position: relative;
+        padding: 3rem;
+        width: 70%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        border-right: 4px solid $black;
+        overflow: hidden;
+        
+        h3 {
+            margin-bottom: 3rem;
+        }
+    }
+    
+    #snowflake {
+        position: absolute;
+        right: -20%;
+        bottom: -10%;
+        opacity: 0.15;
+    }
+    
+    aside {
+        width: 30%;
+        display: flex;
+        flex-flow: column nowrap;
+        
+        .info {
+            padding: 1.5rem 1rem;
+            color: $body-color;
+            background: none;
+            border-bottom: 4px solid $black;
+        }
+        
+        .call-to-action {
+            padding: 1rem;
+            text-align: center;
+            flex: 1 0 auto;
+            
+            h3 { margin-bottom: 1rem; }
+        }
+    }
+    
+    .chat-area,
+    .contact-area {
+        position: relative;
+        padding: 3rem 1rem 1rem;
+        color: $white;
+        
+        &:before {
+            position: absolute;
+            top: -2.5rem;
+            left: 1.5rem;
+            width: 5rem;
+            height: 5rem;
+            content: '';
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        h2 { margin-bottom: 0; }
+    }
+    
+    .chat-area:before { background-image: url(#{$contact-icon}); }
+    
+    .contact-area{
+        background: $purple;
+        
+        &:before { background-image: url(#{$customer-service-icon}); }
+    }
+    
+    &.members-page {
+        
+        .welcome { background: $purple }
+        
+        .info { 
+            color: $white;
+            background: $indigo; }
+        
+        .call-to-action { background: $teal; }
+        
+        .chat-area { background: $green; }
+        
+        .contact-area { background: $blue; }
+    }
+    
+    &.employers-page {
+        
+        .welcome { background: $blue }
+        
+        .call-to-action { background: $indigo; }
+        
+        .chat-area { background: $green; }
+    }
+    
+    &.agents-page {
+        
+        .welcome { background: $green }
+        
+        .call-to-action { background: $indigo; }
+        
+        .chat-area { background: $blue; }
+    }
+    
+    &.providers-page {
+        
+        .welcome { background: $teal }
+        
+        .call-to-action { background: $green; }
+        
+        .chat-area { background: $blue; }
+    }
+}

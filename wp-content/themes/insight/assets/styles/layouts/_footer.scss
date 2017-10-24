@@ -1,0 +1,16 @@
+footer.content-info {
+    
+    .container {
+        text-align: center;
+        
+        nav {
+            display: inline-block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+        }
+        
+        small { display: inline-block; }
+        
+        > * { margin: .15rem 3rem; }
+    }
+}

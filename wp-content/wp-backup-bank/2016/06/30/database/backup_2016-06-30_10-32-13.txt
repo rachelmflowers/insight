@@ -1,0 +1,153 @@
+0000.000 Log file opened on Thu, 30 Jun 2016 14:34:18 +0000 on https://insightba.net
+0000.006 Backup Bank WordPress Backup plugin : WP: 4.5.3 PHP: 5.4.42 (Linux p3nlwpweb209.prod.phx3.secureserver.net 2.6.32-604.30.3.lve1.3.63.el6.nfsfixes.x86_64 #1 SMP Mon Oct 26 11:56:49 MST 2015 x86_64) MySQL: 5.5.43 Server: Apache safe_mode: 0 max_execution_time: 43200 memory_limit: 256M (used: 5.4M | 5.5M) multisite: N
+0000.018 Only 16453329 Mb space left in your Disk.
+0000.032 Starting Sorting Tables.
+0000.171 Table found wp_w5v7qwrc8j_options.
+0000.172 Starting Compressing Table wp_w5v7qwrc8j_options.
+0000.173 Total Rows found 178 in wp_w5v7qwrc8j_options.
+0000.231 Completed Compressing Table wp_w5v7qwrc8j_options in (0.22 seconds) with size (678.2 kb).
+0000.239 Table found wp_w5v7qwrc8j_users.
+0000.241 Starting Compressing Table wp_w5v7qwrc8j_users.
+0000.243 Total Rows found 2 in wp_w5v7qwrc8j_users.
+0000.256 Completed Compressing Table wp_w5v7qwrc8j_users in (0.25 seconds) with size (1.6 kb).
+0000.261 Table found wp_w5v7qwrc8j_usermeta.
+0000.263 Starting Compressing Table wp_w5v7qwrc8j_usermeta.
+0000.267 Total Rows found 47 in wp_w5v7qwrc8j_usermeta.
+0000.278 Completed Compressing Table wp_w5v7qwrc8j_usermeta in (0.27 seconds) with size (5.2 kb).
+0000.284 Table found wp_w5v7qwrc8j_commentmeta.
+0000.286 Starting Compressing Table wp_w5v7qwrc8j_commentmeta.
+0000.288 Total Rows found 0 in wp_w5v7qwrc8j_commentmeta.
+0000.293 Completed Compressing Table wp_w5v7qwrc8j_commentmeta in (0.29 seconds) with size (0.8 kb).
+0000.297 Table found wp_w5v7qwrc8j_comments.
+0000.302 Starting Compressing Table wp_w5v7qwrc8j_comments.
+0000.304 Total Rows found 1 in wp_w5v7qwrc8j_comments.
+0000.310 Completed Compressing Table wp_w5v7qwrc8j_comments in (0.30 seconds) with size (2.1 kb).
+0000.315 Table found wp_w5v7qwrc8j_links.
+0000.316 Starting Compressing Table wp_w5v7qwrc8j_links.
+0000.318 Total Rows found 0 in wp_w5v7qwrc8j_links.
+0000.324 Completed Compressing Table wp_w5v7qwrc8j_links in (0.32 seconds) with size (1.4 kb).
+0000.328 Table found wp_w5v7qwrc8j_postmeta.
+0000.329 Starting Compressing Table wp_w5v7qwrc8j_postmeta.
+0000.334 Total Rows found 178 in wp_w5v7qwrc8j_postmeta.
+0000.344 Completed Compressing Table wp_w5v7qwrc8j_postmeta in (0.34 seconds) with size (14.9 kb).
+0000.348 Table found wp_w5v7qwrc8j_posts.
+0000.349 Starting Compressing Table wp_w5v7qwrc8j_posts.
+0000.351 Total Rows found 107 in wp_w5v7qwrc8j_posts.
+0000.375 Completed Compressing Table wp_w5v7qwrc8j_posts in (0.37 seconds) with size (111.3 kb).
+0000.378 Table found wp_w5v7qwrc8j_term_relationships.
+0000.380 Starting Compressing Table wp_w5v7qwrc8j_term_relationships.
+0000.381 Total Rows found 9 in wp_w5v7qwrc8j_term_relationships.
+0000.385 Completed Compressing Table wp_w5v7qwrc8j_term_relationships in (0.38 seconds) with size (0.9 kb).
+0000.391 Table found wp_w5v7qwrc8j_term_taxonomy.
+0000.395 Starting Compressing Table wp_w5v7qwrc8j_term_taxonomy.
+0000.396 Total Rows found 4 in wp_w5v7qwrc8j_term_taxonomy.
+0000.400 Completed Compressing Table wp_w5v7qwrc8j_term_taxonomy in (0.39 seconds) with size (1.1 kb).
+0000.403 Table found wp_w5v7qwrc8j_termmeta.
+0000.405 Starting Compressing Table wp_w5v7qwrc8j_termmeta.
+0000.406 Total Rows found 0 in wp_w5v7qwrc8j_termmeta.
+0000.410 Completed Compressing Table wp_w5v7qwrc8j_termmeta in (0.40 seconds) with size (0.8 kb).
+0000.415 Table found wp_w5v7qwrc8j_terms.
+0000.417 Starting Compressing Table wp_w5v7qwrc8j_terms.
+0000.421 Total Rows found 4 in wp_w5v7qwrc8j_terms.
+0000.430 Completed Compressing Table wp_w5v7qwrc8j_terms in (0.42 seconds) with size (0.9 kb).
+0000.454 Table found wp_w5v7qwrc8j_backup_bank.
+0000.468 Starting Compressing Table wp_w5v7qwrc8j_backup_bank.
+0000.488 Total Rows found 11 in wp_w5v7qwrc8j_backup_bank.
+0000.539 Completed Compressing Table wp_w5v7qwrc8j_backup_bank in (0.53 seconds) with size (0.9 kb).
+0000.546 Table found wp_w5v7qwrc8j_backup_bank_meta.
+0000.547 Starting Compressing Table wp_w5v7qwrc8j_backup_bank_meta.
+0000.548 Total Rows found 13 in wp_w5v7qwrc8j_backup_bank_meta.
+0000.554 Completed Compressing Table wp_w5v7qwrc8j_backup_bank_meta in (0.55 seconds) with size (10.5 kb).
+0000.559 Table found wp_w5v7qwrc8j_ewwwio_images.
+0000.561 Starting Compressing Table wp_w5v7qwrc8j_ewwwio_images.
+0000.562 Total Rows found 7 in wp_w5v7qwrc8j_ewwwio_images.
+0000.567 Completed Compressing Table wp_w5v7qwrc8j_ewwwio_images in (0.56 seconds) with size (2.5 kb).
+0000.613 Table found wp_w5v7qwrc8j_nf3_action_meta.
+0000.619 Starting Compressing Table wp_w5v7qwrc8j_nf3_action_meta.
+0000.620 Total Rows found 114 in wp_w5v7qwrc8j_nf3_action_meta.
+0000.633 Completed Compressing Table wp_w5v7qwrc8j_nf3_action_meta in (0.63 seconds) with size (4.3 kb).
+0000.640 Table found wp_w5v7qwrc8j_nf3_actions.
+0000.646 Starting Compressing Table wp_w5v7qwrc8j_nf3_actions.
+0000.647 Total Rows found 6 in wp_w5v7qwrc8j_nf3_actions.
+0000.653 Completed Compressing Table wp_w5v7qwrc8j_nf3_actions in (0.65 seconds) with size (1.3 kb).
+0000.660 Table found wp_w5v7qwrc8j_nf3_field_meta.
+0000.661 Starting Compressing Table wp_w5v7qwrc8j_nf3_field_meta.
+0000.662 Total Rows found 172 in wp_w5v7qwrc8j_nf3_field_meta.
+0000.672 Completed Compressing Table wp_w5v7qwrc8j_nf3_field_meta in (0.67 seconds) with size (6.1 kb).
+0000.678 Table found wp_w5v7qwrc8j_nf3_fields.
+0000.683 Starting Compressing Table wp_w5v7qwrc8j_nf3_fields.
+0000.684 Total Rows found 10 in wp_w5v7qwrc8j_nf3_fields.
+0000.689 Completed Compressing Table wp_w5v7qwrc8j_nf3_fields in (0.68 seconds) with size (1.6 kb).
+0000.695 Table found wp_w5v7qwrc8j_nf3_form_meta.
+0000.696 Starting Compressing Table wp_w5v7qwrc8j_nf3_form_meta.
+0000.697 Total Rows found 27 in wp_w5v7qwrc8j_nf3_form_meta.
+0000.702 Completed Compressing Table wp_w5v7qwrc8j_nf3_form_meta in (0.70 seconds) with size (1.6 kb).
+0000.707 Table found wp_w5v7qwrc8j_nf3_forms.
+0000.708 Starting Compressing Table wp_w5v7qwrc8j_nf3_forms.
+0000.710 Total Rows found 2 in wp_w5v7qwrc8j_nf3_forms.
+0000.714 Completed Compressing Table wp_w5v7qwrc8j_nf3_forms in (0.71 seconds) with size (1 kb).
+0000.720 Table found wp_w5v7qwrc8j_nf3_object_meta.
+0000.721 Starting Compressing Table wp_w5v7qwrc8j_nf3_object_meta.
+0000.723 Total Rows found 0 in wp_w5v7qwrc8j_nf3_object_meta.
+0000.727 Completed Compressing Table wp_w5v7qwrc8j_nf3_object_meta in (0.72 seconds) with size (0.7 kb).
+0000.732 Table found wp_w5v7qwrc8j_nf3_objects.
+0000.733 Starting Compressing Table wp_w5v7qwrc8j_nf3_objects.
+0000.735 Total Rows found 0 in wp_w5v7qwrc8j_nf3_objects.
+0000.739 Completed Compressing Table wp_w5v7qwrc8j_nf3_objects in (0.73 seconds) with size (0.8 kb).
+0000.749 Table found wp_w5v7qwrc8j_nf3_relationships.
+0000.750 Starting Compressing Table wp_w5v7qwrc8j_nf3_relationships.
+0000.751 Total Rows found 0 in wp_w5v7qwrc8j_nf3_relationships.
+0000.755 Completed Compressing Table wp_w5v7qwrc8j_nf3_relationships in (0.75 seconds) with size (0.9 kb).
+0000.759 Table found wp_w5v7qwrc8j_nf_objectmeta.
+0000.760 Starting Compressing Table wp_w5v7qwrc8j_nf_objectmeta.
+0000.761 Total Rows found 75 in wp_w5v7qwrc8j_nf_objectmeta.
+0000.768 Completed Compressing Table wp_w5v7qwrc8j_nf_objectmeta in (0.76 seconds) with size (3.3 kb).
+0000.772 Table found wp_w5v7qwrc8j_nf_objects.
+0000.773 Starting Compressing Table wp_w5v7qwrc8j_nf_objects.
+0000.774 Total Rows found 4 in wp_w5v7qwrc8j_nf_objects.
+0000.786 Completed Compressing Table wp_w5v7qwrc8j_nf_objects in (0.78 seconds) with size (0.7 kb).
+0000.789 Table found wp_w5v7qwrc8j_nf_relationships.
+0000.791 Starting Compressing Table wp_w5v7qwrc8j_nf_relationships.
+0000.792 Total Rows found 3 in wp_w5v7qwrc8j_nf_relationships.
+0000.796 Completed Compressing Table wp_w5v7qwrc8j_nf_relationships in (0.79 seconds) with size (0.9 kb).
+0000.800 Table found wp_w5v7qwrc8j_ninja_forms_fav_fields.
+0000.802 Starting Compressing Table wp_w5v7qwrc8j_ninja_forms_fav_fields.
+0000.803 Total Rows found 3 in wp_w5v7qwrc8j_ninja_forms_fav_fields.
+0000.810 Completed Compressing Table wp_w5v7qwrc8j_ninja_forms_fav_fields in (0.80 seconds) with size (5.6 kb).
+0000.815 Table found wp_w5v7qwrc8j_ninja_forms_fields.
+0000.817 Starting Compressing Table wp_w5v7qwrc8j_ninja_forms_fields.
+0000.818 Total Rows found 5 in wp_w5v7qwrc8j_ninja_forms_fields.
+0000.824 Completed Compressing Table wp_w5v7qwrc8j_ninja_forms_fields in (0.82 seconds) with size (3.1 kb).
+0000.828 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_options.table.sql (1/29) : Added to Final Database.
+0000.909 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_users.table.sql (2/29) : Added to Final Database.
+0000.912 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_usermeta.table.sql (3/29) : Added to Final Database.
+0000.916 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_commentmeta.table.sql (4/29) : Added to Final Database.
+0000.919 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_comments.table.sql (5/29) : Added to Final Database.
+0000.922 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_links.table.sql (6/29) : Added to Final Database.
+0000.925 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_postmeta.table.sql (7/29) : Added to Final Database.
+0000.929 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_posts.table.sql (8/29) : Added to Final Database.
+0000.936 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_term_relationships.table.sql (9/29) : Added to Final Database.
+0000.939 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_term_taxonomy.table.sql (10/29) : Added to Final Database.
+0000.941 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_termmeta.table.sql (11/29) : Added to Final Database.
+0000.944 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_terms.table.sql (12/29) : Added to Final Database.
+0000.947 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_backup_bank.table.sql (13/29) : Added to Final Database.
+0000.949 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_backup_bank_meta.table.sql (14/29) : Added to Final Database.
+0000.952 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_ewwwio_images.table.sql (15/29) : Added to Final Database.
+0000.954 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_action_meta.table.sql (16/29) : Added to Final Database.
+0000.958 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_actions.table.sql (17/29) : Added to Final Database.
+0000.961 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_field_meta.table.sql (18/29) : Added to Final Database.
+0000.965 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_fields.table.sql (19/29) : Added to Final Database.
+0000.968 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_form_meta.table.sql (20/29) : Added to Final Database.
+0000.971 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_forms.table.sql (21/29) : Added to Final Database.
+0000.974 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_object_meta.table.sql (22/29) : Added to Final Database.
+0000.977 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_objects.table.sql (23/29) : Added to Final Database.
+0000.979 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf3_relationships.table.sql (24/29) : Added to Final Database.
+0000.981 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf_objectmeta.table.sql (25/29) : Added to Final Database.
+0000.984 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf_objects.table.sql (26/29) : Added to Final Database.
+0000.986 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_nf_relationships.table.sql (27/29) : Added to Final Database.
+0000.988 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_ninja_forms_fav_fields.table.sql (28/29) : Added to Final Database.
+0000.990 backup_2016-06-30_10-32-13-table-wp_w5v7qwrc8j_ninja_forms_fields.table.sql (29/29) : Added to Final Database.
+0001.001 Finishing file writing of backup_2016-06-30_10-32-13.sql file (Size:0.8 Mb).
+0001.022 Compressing Database file.
+0001.023 29 Tables are Successfully Backed up.
+0001.024 Completed Backup for Database.

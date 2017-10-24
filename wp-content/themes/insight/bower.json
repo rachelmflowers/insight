@@ -1,0 +1,30 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
+    "popper.js": "https://unpkg.com/popper.js",
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "overrides": {
+    "popper.js": {
+      "main": [
+        "./index.js"
+      ]
+    },
+    "font-awesome": {
+        "main": [
+            "css/font-awesome.css",
+            "fonts/*"
+        ]
+    }
+  },
+  "resolutions": {
+    "popper.js": "e-tag:W/\"13b6b-1"
+  }
+}
