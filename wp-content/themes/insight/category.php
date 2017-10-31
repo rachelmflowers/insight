@@ -1,32 +1,12 @@
 <?php
-// Text content per audience
-if ( is_category( '10' ) ) {
-    $welcome_text = "to your benefits";
-    $c2a = "Looking for forms?";
-    $c2a_button = "Visit our forms library";
-    $c2a_link = "";
-} elseif ( is_category( '11' ) ) {
-    $welcome_text = "for employers";
-    $c2a = "Ready to begin?";
-    $c2a_button = "Request a proposal";
-    $c2a_link = "";
-} elseif ( is_category( '12' ) ) {
-    $welcome_text = "for agents";
-    $c2a = "Ready to begin?";
-    $c2a_button = "Request a proposal";
-    $c2a_link = "";
-} elseif ( is_category( '13' ) ) {
-    $welcome_text = "for providers";
-    $c2a = "Ready to begin?";
-    $c2a_button = "something???";
-    $c2a_link = "";
-}
 $category = "";
 $categories = get_the_category();
 
 if ($categories) {
     $category = strtolower($categories[0]->name);
 }    
+
+$welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}s";
 ?>
 
 <section class="main-content">
@@ -67,10 +47,7 @@ if ($categories) {
     </div>
     <aside>
         <div class="info"><?php dynamic_sidebar("{$category}-intro"); ?></div>
-        <div class="call-to-action">
-            <h3><?= $c2a ?></h3>
-            <a class="btn btn-dark" href="<?= $c2a_link ?>"><?= $c2a_button ?></a>
-        </div>
+        <?php dynamic_sidebar("{$category}-c2a"); ?>
     </aside>
 </section>
 

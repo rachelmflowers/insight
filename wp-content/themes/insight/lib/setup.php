@@ -147,7 +147,7 @@ function widgets_init() {
     register_sidebar( [
         'name' => __( 'Members Call To Action', 'sage' ),
         'id' => 'member-c2a',
-        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -156,7 +156,7 @@ function widgets_init() {
     register_sidebar( [
         'name' => __( 'Employers Call To Action', 'sage' ),
         'id' => 'employer-c2a',
-        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -165,7 +165,7 @@ function widgets_init() {
     register_sidebar( [
         'name' => __( 'Agents Call To Action', 'sage' ),
         'id' => 'agent-c2a',
-        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -174,7 +174,7 @@ function widgets_init() {
     register_sidebar( [
         'name' => __( 'Providers Call To Action', 'sage' ),
         'id' => 'provider-c2a',
-        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
