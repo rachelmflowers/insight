@@ -71,14 +71,14 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
  * Register sidebars
  */
 function widgets_init() {
-    register_sidebar( [
-        'name' => __( 'Sidebar Additional', 'sage' ),
-        'id' => 'sidebar-primary',
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ] );
+//    register_sidebar( [
+//        'name' => __( 'Sidebar Additional', 'sage' ),
+//        'id' => 'sidebar-primary',
+//        'before_widget' => '<section class="widget %1$s %2$s">',
+//        'after_widget' => '</section>',
+//        'before_title' => '<h3>',
+//        'after_title' => '</h3>'
+//    ] );
 
     register_sidebar( [
         'name' => __( 'Home Welcome', 'sage' ),
@@ -114,6 +114,70 @@ function widgets_init() {
         'after_widget' => '</section>',
         'before_title' => '<h2>',
         'after_title' => '</h2>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Members Intro', 'sage' ),
+        'id' => 'member-intro',
+        'before_widget' => '<section class="widget intro %1$s %2$s">',
+        'after_widget' => '</section>',
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Employers Intro', 'sage' ),
+        'id' => 'employer-intro',
+        'before_widget' => '<section class="widget intro %1$s %2$s">',
+        'after_widget' => '</section>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Agents Intro', 'sage' ),
+        'id' => 'agent-intro',
+        'before_widget' => '<section class="widget intro %1$s %2$s">',
+        'after_widget' => '</section>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Providers Intro', 'sage' ),
+        'id' => 'provider-intro',
+        'before_widget' => '<section class="widget intro %1$s %2$s">',
+        'after_widget' => '</section>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Members Call To Action', 'sage' ),
+        'id' => 'member-c2a',
+        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Employers Call To Action', 'sage' ),
+        'id' => 'employer-c2a',
+        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Agents Call To Action', 'sage' ),
+        'id' => 'agent-c2a',
+        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ] );
+
+    register_sidebar( [
+        'name' => __( 'Providers Call To Action', 'sage' ),
+        'id' => 'provider-c2a',
+        'before_widget' => '<section class="widget c2a %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
     ] );
 }
 add_action( 'widgets_init', __NAMESPACE__ . '\\widgets_init' );

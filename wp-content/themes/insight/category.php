@@ -31,32 +31,36 @@ if ($categories) {
 
 <?php
 
-if ( !is_user_logged_in() && (um_user('role') != 'admin') ) {
+//if ( !is_user_logged_in() && (um_user('role') != 'admin') ) {
     ?>
+<!--
     <div class="overlay">
         <div class="login-box">
-            <h2><?=single_cat_title();?> Login</h2>
-            <?=do_shortcode('[ultimatemember form_id=418]');?>
+            <h2><?//=single_cat_title();?> Login</h2>
+            <?//=do_shortcode('[ultimatemember form_id=418]');?>
 
-            <?=do_shortcode('[ultimatemember form_id=417]');?>
+            <?//=do_shortcode('[ultimatemember form_id=417]');?>
             <a href="#" onclick="toggleLogin(); toggleRegistration(this);">New User</a> <a href="">User Help</a>
         </div>
     </div>
+-->
     <?php
-} elseif (is_user_logged_in() && (um_user('role') != $category) && (um_user('role') != 'admin')) {
+//} elseif (is_user_logged_in() && (um_user('role') != $category) && (um_user('role') != 'admin')) {
     ?>
+<!--
     <div class="overlay">
         <div class="login-box">
-            <h2><?=single_cat_title();?> Login</h2>
+            <h2><?//=single_cat_title();?> Login</h2>
                 
             <div class="alert alert-warning">You do not have permission to view this section.</div>
 
-            <?=do_shortcode('[ultimatemember form_id=417]');?>
+            <?//=do_shortcode('[ultimatemember form_id=417]');?>
             <a href="#" onclick="toggleRegistration(this);">New User</a> <a href="/logout">Logout</a> <a href="">User Help</a>
         </div>
     </div>
+-->
     <?php
-}
+//}
 ?>
 <section class="main-content">
     <div class="welcome">
@@ -95,10 +99,7 @@ if ( !is_user_logged_in() && (um_user('role') != 'admin') ) {
     </svg>
     </div>
     <aside>
-        <div class="info">
-            <p>As an employee of an Insight client, you have 24/7 secure access to all of your benefit information right at your fingertips!</p>
-            <p>Use the navigation bar above for claims submission, address changes, flex, HRA and HSA reimbursement, appeals, your claims history and balances, enrollment, and more.</p>
-        </div>
+        <div class="info"><?php dynamic_sidebar("{$category}-intro"); ?></div>
         <div class="call-to-action">
             <h3><?= $c2a ?></h3>
             <a class="btn btn-dark" href="<?= $c2a_link ?>"><?= $c2a_button ?></a>
