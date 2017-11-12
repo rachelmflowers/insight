@@ -1,4 +1,8 @@
 // Grid system
+.row {
+    margin-left: inherit;
+    margin-right: inherit;
+}
 .main {
     flex: 1 0 auto;
     width: calc(100% - 18rem);

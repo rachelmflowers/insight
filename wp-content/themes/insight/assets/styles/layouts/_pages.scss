@@ -9,7 +9,7 @@
 }
 
     
-@inclue media-breakpoint-up(md) {
+@include media-breakpoint-up(md) {
     
     .page-footer { display: flex; }
 }
@@ -19,7 +19,7 @@
 .chat-area {
     border-top: 4px solid $black;
     
-    @inclue media-breakpoint-up(md) {
+    @include media-breakpoint-up(md) {
         width: 50%;
         float: left;
     }
@@ -30,7 +30,7 @@
 .welcome-message,
 .chat-area {
     
-    @inclue media-breakpoint-up(md) {
+    @include media-breakpoint-up(md) {
         border-right: 4px solid $black;
     }
 }

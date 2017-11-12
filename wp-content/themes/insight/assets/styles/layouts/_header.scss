@@ -1,7 +1,7 @@
 .banner {
 
     @include media-breakpoint-up(md) {
-        > .container { padding-right: 0.5rem; }
+        > .container { padding-right: calc(15px + 0.5rem;) }
     }
 }
 

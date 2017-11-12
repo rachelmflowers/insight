@@ -4,13 +4,23 @@ final class NF_Admin_Menus_SystemStatus extends NF_Abstracts_Submenu
 {
     public $parent_slug = 'ninja-forms';
 
-    public $page_title = 'Get Help';
+    public $menu_slug = 'nf-system-status';
 
     public $priority = 12;
 
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function get_page_title()
+    {
+        return __( 'Get Help', 'ninja-forms' );
+    }
+
+    public function get_capability()
+    {
+        return apply_filters( 'ninja_forms_admin_status_capabilities', $this->capability );
     }
 
     public function display()
@@ -20,13 +30,17 @@ final class NF_Admin_Menus_SystemStatus extends NF_Abstracts_Submenu
 
         wp_enqueue_style( 'nf-admin-system-status', Ninja_Forms::$url . 'assets/css/admin-system-status.css' );
         wp_enqueue_script( 'nf-admin-system-status-script', Ninja_Forms::$url . 'assets/js/admin-system-status.js', array( 'jquery' ) );
+        wp_enqueue_script( 'jBox', Ninja_Forms::$url . 'assets/js/lib/jBox.min.js', array( 'jquery' ) );
+        wp_enqueue_style( 'jBox', Ninja_Forms::$url . 'assets/css/jBox.css' );
+        wp_enqueue_style( 'nf-font-awesome', Ninja_Forms::$url . 'assets/css/font-awesome.min.css' );
+        
         //PHP locale
         $locale = localeconv();
 
         if ( is_multisite() ) {
             $multisite = __( 'Yes', 'ninja-forms' );
         } else {
-            $multisite =  __( 'No', 'ninja-forms' );
+            $multisite = __( 'No', 'ninja-forms' );
          }
 
          //TODO: Possible refactor
@@ -69,12 +83,7 @@ final class NF_Admin_Menus_SystemStatus extends NF_Abstracts_Submenu
 
         //Time Zone Check
         //TODO: May need refactored
-        $default_timezone = date_default_timezone_get();
-        if ( 'UTC' !== $default_timezone ) {
-            $default_timezone = sprintf( __( 'Default timezone is %s - it should be UTC', 'ninja-forms' ), $default_timezone );
-        } else {
-            $default_timezone =  sprintf( __( 'Default timezone is %s', 'ninja-forms' ), $default_timezone );
-        }
+        $default_timezone = get_option( 'timezone_string' );
 
         //Check for active plugins
         $active_plugins = (array) get_option( 'active_plugins', array() );
@@ -108,27 +117,57 @@ final class NF_Admin_Menus_SystemStatus extends NF_Abstracts_Submenu
             $site_wide_plugins = implode( ', <br/>', $all_plugins );
         }
 
-        $server_ip = $_SERVER['SERVER_ADDR'];
+        $server_ip = '';
+        if( array_key_exists( 'SERVER_ADDR', $_SERVER ) )
+            $server_ip = $_SERVER[ 'SERVER_ADDR' ];
+        elseif( array_key_exists( 'LOCAL_ADDR', $_SERVER ) )
+            $server_ip = $_SERVER[ 'LOCAL_ADDR' ];
         $host_name = gethostbyaddr( $server_ip );
+        
+        $tls = WPN_Helper::get_tls();
+        if ( ! $tls ) $tls = 'unknown';
+
+        $wp_version = get_bloginfo('version');
+        $wp_compatible = ( version_compare( $wp_version, Ninja_Forms::WP_MIN_VERSION ) >= 0 ) ? __( 'Supported', 'ninja-forms' ) : __( 'Not Supported', 'ninja-forms' );
+
+        /* 
+         * Error log
+         */
+        $error_log = array();
+
+        $log = $wpdb->get_results( 'SELECT * FROM `' . $wpdb->prefix . 'nf3_objects` WHERE type = "log" ORDER BY created_at DESC LIMIT 10', ARRAY_A );
+        
+        if ( is_array( $log ) && 0 < count( $log ) ) {
+            foreach ( $log as $error ) {
+                $error_object = Ninja_Forms()->form()->object( $error[ 'id' ] )->get();
+                // Make sure we don't have a duplicate message
+                if ( false === in_array( $error_object->get_setting( 'message' ) ,$error_log ) ) {
+                    $error_log[] = $error_object->get_setting( 'message' );
+                }
+            }
+        } else {
+            $error_log[] = __( 'None Logged', 'ninja-forms' );
+        }
 
         //Output array
         $environment = array(
             __( 'Home URL','ninja-forms' ) => home_url(),
             __( 'Site URL','ninja-forms' ) => site_url(),
             __( 'Ninja Forms Version','ninja-forms' ) => esc_html( Ninja_Forms::VERSION ),
-            __( 'WP Version','ninja-forms' ) => get_bloginfo('version'),
+            __( 'WP Version','ninja-forms' ) => $wp_version . ' - ' . $wp_compatible,
             __( 'WP Multisite Enabled','ninja-forms' ) => $multisite,
             __( 'Web Server Info','ninja-forms' ) => esc_html( $_SERVER['SERVER_SOFTWARE'] ),
+            __( 'TLS Version','ninja-forms' ) => $tls,
             __( 'PHP Version','ninja-forms' ) => esc_html( phpversion() ),
             //TODO: Possibly Refactor with Ninja forms global $_db?
             __( 'MySQL Version','ninja-forms' ) => $wpdb->db_version(),
             __( 'PHP Locale','ninja-forms' ) =>  $data,
             //TODO: Possibly move the ninja_forms_letters_to_numbers function over.
-            __( 'WP Memory Limit','ninja-forms' ) => size_format( WP_MEMORY_LIMIT ),
+            __( 'WP Memory Limit','ninja-forms' ) => WP_MEMORY_LIMIT,
             __( 'WP Debug Mode', 'ninja-forms' ) => $debug,
             __( 'WP Language', 'ninja-forms' ) => $lang,
             __( 'WP Max Upload Size','ninja-forms' ) => size_format( wp_max_upload_size() ),
-            __('PHP Post Max Size','ninja-forms' ) => size_format( ini_get('post_max_size') ),
+            __('PHP Post Max Size','ninja-forms' ) => ini_get( 'post_max_size' ),
             __('Max Input Nesting Level','ninja-forms' ) => ini_get('max_input_nesting_level'),
             __('PHP Time Limit','ninja-forms' ) => ini_get('max_execution_time'),
             __( 'PHP Max Input Vars','ninja-forms' ) => ini_get('max_input_vars'),
@@ -140,6 +179,6 @@ final class NF_Admin_Menus_SystemStatus extends NF_Abstracts_Submenu
             __( 'Default Timezone','ninja-forms' ) => $default_timezone,
         );
 
-        Ninja_Forms::template( 'admin-menu-system-status.html.php', compact( 'environment', 'site_wide_plugins' ) );
+        Ninja_Forms::template( 'admin-menu-system-status.html.php', compact( 'environment', 'site_wide_plugins', 'error_log' ) );
     }
 } // End Class NF_Admin_SystemStatus

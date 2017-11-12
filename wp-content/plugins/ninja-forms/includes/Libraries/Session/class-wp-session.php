@@ -13,6 +13,13 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/*
+* MODIFICATIONS
+*
+* - Remove `set_cooke()` from constructor
+* - Give `set_cookie()` public access
+*/
+
 /**
  * WordPress Session class for managing user session data.
  *
@@ -76,8 +83,17 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
             $cookie = stripslashes( $_COOKIE[WP_SESSION_COOKIE] );
             $cookie_crumbs = explode( '||', $cookie );
 
-            $this->session_id = $cookie_crumbs[0];
-            $this->expires = $cookie_crumbs[1];
+            if( $this->is_valid_md5( $cookie_crumbs[0] ) ) {
+ 
+               $this->session_id = $cookie_crumbs[0];
+ 
+           } else {
+ 
+               $this->regenerate_id( true );
+ 
+           }
+ 
+            $this->expires     = $cookie_crumbs[1];
             $this->exp_variant = $cookie_crumbs[2];
 
             // Update the session expiration if we're past the variant time
@@ -93,8 +109,10 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
 
         $this->read_data();
 
-        $this->set_cookie();
-
+        /*
+         * MODIFICATION: Only set the cookie manually.
+         */
+        //$this->set_cookie();
     }
 
     /**
@@ -123,7 +141,10 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
     /**
      * Set the session cookie
      */
-    protected function set_cookie() {
+    /*
+     * MODIFICATION: Change access to public for manually setting cookie.
+     */
+    public function set_cookie() {
         @setcookie( WP_SESSION_COOKIE, $this->session_id . '||' . $this->expires . '||' . $this->exp_variant , $this->expires, COOKIEPATH, COOKIE_DOMAIN );
     }
 
@@ -138,6 +159,16 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
 
         return md5( $hasher->get_random_bytes( 32 ) );
     }
+
+      /**
+       * Checks if is valid md5 string
+       *
+       * @param string $md5
+       * @return int
+       */
+      protected function is_valid_md5( $md5 = '' ){
+          return preg_match( '/^[a-f0-9]{32}$/', $md5 );
+      }
 
     /**
      * Read data from a transient for the current session.

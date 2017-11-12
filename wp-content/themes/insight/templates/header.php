@@ -3,7 +3,7 @@
         <div class="container">
             <span class="contact-phone">
                 <strong><span class="text">Contact us today!</span><i class="fa fa-phone"></i>
-                    <a href="tel:18001234567">1 800 123 4567</a>
+                    <a href="tel:18001234567">(877) 827.1414</a>
                 </strong>
             </span>
             
@@ -30,20 +30,24 @@
             <?php
         }
         ?>
-        <button type="button" class="nav-trigger"><i class="fa fa-reorder"></i></button>
-        <nav class="nav__primary">
-            <?php
-            if ( has_nav_menu( 'primary_navigation' ) ):
-                wp_nav_menu( [ 'theme_location' => 'primary_navigation', 'menu_class' => 'nav' ] );
-            endif;
+        <button type="button" class="nav-trigger dl-trigger dl-active"><i class="fa fa-reorder"></i></button>
+
+        <?php
+        if ( has_nav_menu( 'primary_navigation' ) ) :
             ?>
-        </nav>
-        <nav class="nav__mobile">
+            <nav class="nav__primary">
+                <?php wp_nav_menu( [ 'theme_location' => 'primary_navigation', 'menu_class' => 'nav' ] ); ?>
+            </nav>
             <?php
-            if ( has_nav_menu( 'primary_navigation' ) ):
-                wp_nav_menu( [ 'theme_location' => 'primary_navigation', 'menu_class' => 'nav' ] );
-            endif;
+        endif;
+
+        if ( has_nav_menu( 'mobile_navigation' ) ) :
             ?>
-        </nav>
+            <nav class="nav__mobile">
+                <?php wp_nav_menu( [ 'theme_location' => 'mobile_navigation', 'menu_class' => 'nav' ] ); ?>
+            </nav>
+            <?php
+        endif;
+        ?>
     </div>
 </header>

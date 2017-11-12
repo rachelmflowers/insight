@@ -53,6 +53,11 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
         add_action('admin_head', array( $this, 'hide_page_title_action' ) );
     }
 
+    public function get_page_title()
+    {
+        return __( 'Submissions', 'ninja-forms' );
+    }
+
     /**
      * Display
      */
@@ -72,6 +77,10 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 
         if( ! $form_id ) return array();
 
+        static $cols;
+
+        if( $cols ) return $cols;
+
         $cols = array(
             'cb'    => '<input type="checkbox" />',
             'seq_num' => __( '#', 'ninja-forms' ),
@@ -85,8 +94,12 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 
             if( in_array( $field->get_setting( 'type' ), $hidden_field_types ) ) continue;
 
-            // TODO: Add support for 'Admin Labels'
-            $cols[ 'field_' . $field->get_id() ] = $field->get_setting( 'label' );
+            if ( $field->get_setting( 'admin_label' ) ) {
+                $cols[ 'field_' . $field->get_id() ] = $field->get_setting( 'admin_label' );
+            } else {
+                $cols[ 'field_' . $field->get_id() ] = $field->get_setting( 'label' );
+            }
+
         }
 
         $cols[ 'sub_date' ] = __( 'Date', 'ninja-forms' );
@@ -149,6 +162,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
             $form_options[ $form->get_id() ] = $form->get_setting( 'title' );
         }
         $form_options = apply_filters( 'ninja_forms_submission_filter_form_options', $form_options );
+        asort($form_options);
 
         if( isset( $_GET[ 'form_id' ] ) ) {
             $form_selected = $_GET[ 'form_id' ];
@@ -249,8 +263,8 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
                     $url = admin_url( 'admin.php?page=nf-processing&action=download_all_subs&form_id=' . absint( $_REQUEST['form_id'] ) . '&redirect=' . $redirect );
                     $url = esc_url( $url );
                     ?>
-                    var button = '<a href="<?php echo $url; ?>" class="button-secondary nf-download-all"><?php echo __( 'Download All Submissions', 'ninja-forms' ); ?></a>';
-                    jQuery( '#doaction2' ).after( button );
+                    var button = '<a href="<?php echo $url; ?>" class=<?php __( "button-secondary nf-download-all", 'ninja-forms' ) ;?> . '>' . <?php echo __( 'Download All Submissions', 'ninja-forms' ); ?></a>';
+//                    jQuery( '#doaction2' ).after( button );
                     <?php
                 }
 
@@ -285,7 +299,10 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 
         if ((isset ($_REQUEST['action']) && $_REQUEST['action'] == 'export') || (isset ($_REQUEST['action2']) && $_REQUEST['action2'] == 'export')) {
 
-            $sub_ids = WPN_Helper::esc_html($_REQUEST['post']);
+            $sub_ids = array();
+            if (isset($_REQUEST['post'])) {
+              $sub_ids = WPN_Helper::esc_html($_REQUEST['post']);
+            }
 
             Ninja_Forms()->form( $_REQUEST['form_id'] )->export_subs( $sub_ids );
         }
@@ -309,7 +326,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 
             unlink($file_path);
 
-            $form_name = Ninja_Forms()->form(absint($_REQUEST['form_id']))->get_setting('title');
+            $form_name = Ninja_Forms()->form(absint($_REQUEST['form_id']))->get()->get_setting('title');
             $form_name = sanitize_title($form_name);
 
             $today = date('Y-m-d', current_time('timestamp'));
@@ -333,7 +350,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
             ( isset( $_GET[ 'post_type' ] ) && 'nf_sub' == $_GET[ 'post_type'] ) ||
             'nf_sub' == get_post_type()
         ){
-            echo '<style type="text/css">.page-title-action{display: none;}</style>';
+            echo '<style type="text/css">.page-title-action, .subsubsub, .view-mode{display: none;}</style>';
         }
     }
 
@@ -360,7 +377,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
      */
     private function custom_columns_sub_date( $sub )
     {
-        return $sub->get_sub_date();
+        return $sub->get_sub_date( 'm/d/Y h:i A' );
     }
 
     /**
@@ -401,6 +418,9 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
         $begin_date = $_GET[ 'begin_date' ];
         $end_date = $_GET[ 'end_date' ];
 
+        // Include submissions on the end_date.
+        $end_date = date( 'm/d/Y', strtotime( '+1 day', strtotime( $end_date ) ) );
+
         if( $begin_date > $end_date ){
             $temp_date = $begin_date;
             $begin_date = $end_date;
@@ -416,6 +436,11 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
         }
 
         return $vars;
+    }
+
+    public function get_capability()
+    {
+        return apply_filters( 'ninja_forms_admin_submissions_capabilities', $this->capability );
     }
 
 }

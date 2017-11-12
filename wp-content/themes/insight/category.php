@@ -6,7 +6,7 @@ if ($categories) {
     $category = strtolower($categories[0]->name);
 }    
 
-$welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}s";
+$welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
 ?>
 
 <section class="main-content">
@@ -56,15 +56,3 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}s";
     <?php dynamic_sidebar('audience-contact'); ?>
 </div>
 
-<script type="text/javascript">
-    function toggleLogin() {
-        jQuery('.um-login').fadeToggle();
-    };
-
-    function toggleRegistration(e) {
-        jQuery('.um-register').fadeToggle();
-        $text = jQuery(e).text();
-        $toggleText = $text == 'New User' ? 'Login' : 'New User';
-        jQuery(e).text($toggleText);
-    };
-</script>

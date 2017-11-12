@@ -19,19 +19,19 @@
         'common': {
             init: function () {
                 // JavaScript to be fired on all pages
-                function toggleLogin() {
-                    $('.um-login').fadeToggle();
-                };
-
-                function toggleRegistration(e) {
-                    $('.um-register.').fadeToggle();
-                    $toggleText = $(e).text == 'New User' ? 'Login' : 'New User';
-
-                    return $toggleText;
-                };
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
+                function toggleLogin() {
+                    $('.um-login').fadeToggle();
+                }
+
+                function toggleRegistration(e) {
+                    $('.um-register.').fadeToggle();
+                    var toggleText = $(e).text === 'New User' ? 'Login' : 'New User';
+
+                    return toggleText;
+                }
             }
         },
         // Home page
