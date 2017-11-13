@@ -3,7 +3,7 @@
         <div class="container">
             <span class="contact-phone">
                 <strong><span class="text">Contact us today!</span><i class="fa fa-phone"></i>
-                    <a href="tel:18001234567">(877) 827.1414</a>
+                    <a href="tel:18001234567">877.827.1414</a>
                 </strong>
             </span>
             

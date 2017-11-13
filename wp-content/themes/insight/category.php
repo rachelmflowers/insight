@@ -47,7 +47,7 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
     </div>
     <aside>
         <div class="info"><?php dynamic_sidebar("{$category}-intro"); ?></div>
-        <?php dynamic_sidebar("{$category}-c2a"); ?>
+        <?php dynamic_sidebar("{$category}-ca"); ?>
     </aside>
 </section>
 

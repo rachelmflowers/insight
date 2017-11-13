@@ -232,21 +232,21 @@
                 top: 100%;
                 right: 0;
                 left: 0;
-                z-index: 1;
+                z-index: 100;
                 margin: 0;
                 max-height: 0;
                 list-style: none;
-                background: rgba($indigo, 0.8);
+                background: rgba(darken($indigo, 15), 0.8);
                 overflow: hidden;
                 transition: max-height 0.3s linear;
 
-                .members-page & { background: rgba($purple, 0.8); }
+                .members-page & { background: rgba(darken($purple, 15), 0.8); }
 
-                .employers-page & { background: rgba($blue, 0.8); }
+                .employers-page & { background: rgba(darken($blue, 15), 0.8); }
 
-                .agents-page & { background: rgba($green, 0.8); }
+                .agents-page & { background: rgba(darken($green, 15), 0.8); }
 
-                .providers-page & { background: rgba($teal, 0.8); }
+                .providers-page & { background: rgba(darken($teal, 15), 0.8); }
 
                 a { 
                     display: block;
@@ -287,13 +287,18 @@
             > li {
                 padding: 0;
                 
-                a { font-weight: $font-weight-bold; }
+                > a { font-weight: $font-weight-bold; }
                 
-                &.current_page_item a { color: $teal; }
+                &.current_page_item > a { color: $teal; }
                 
-                &:hover a,
-                &:focus a,
-                &:active a { color: $green; }
+                &:hover > a,
+                &:focus > a,
+                &:active > a { color: $green; }
+            }
+            
+            .children { 
+                margin-top: .5rem;
+                margin-bottom: 1.5rem;
             }
         }
     }

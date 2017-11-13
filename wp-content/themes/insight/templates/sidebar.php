@@ -6,29 +6,37 @@ if (is_page()) {
     // Get Parent if there is one
     $parent = $post->post_parent;
 
-    if ( get_the_title($parent) == 'Home') {
-        $nav_title = get_the_title($post);
-        $nav_link = get_permalink($post);
-    } else {
-        $nav_title = get_the_title($parent);
-        $nav_link = get_permalink($parent);
-    }
-
     // Are there any siblings?
     $siblings = get_pages('child_of='.$parent);
 
-    if (count($children) != 0) {
+
+    if (get_the_title($parent) === get_the_title($post)) {
+        $args = array(
+            'depth' => 2,
+            'title_li' =>'',
+            'child_of' => $post->ID
+        );
+        $nav_title = get_the_title($post);
+        $nav_link = get_permalink($post);
+    
+    } elseif (count($children) != 0 && $parent != 0) {
+        
         $args = array(
             'depth' => 1,
             'title_li' => '',
             'child_of' => $post->ID
         );
-    } elseif ($parent != 0) {
+        $nav_title = get_the_title($post);
+        $nav_link = get_permalink($post);
+        
+    } else {
         $args = array(
             'depth' => 1,
             'title_li' =>'',
             'child_of' => $parent
         );
+        $nav_title = get_the_title($parent);
+        $nav_link = get_permalink($parent);
     }
 
     // Show pages if this page has any siblings and/or it has children

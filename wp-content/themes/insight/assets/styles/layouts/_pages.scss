@@ -24,6 +24,10 @@
         float: left;
     }
     
+    h2, h3 {
+        color: $white;
+    }
+    
     p:last-of-type { margin-bottom: 0; }
 }
 
@@ -42,7 +46,35 @@
         flex-flow: column wrap;
     }
     
-    .main-content { padding: 1rem 4rem; }
+    .so-widget-sow-hero {
+        height: 27rem;
+        
+        .sow-slider-base,
+        .sow-slider-images,
+        .sow-slider-image { height: 100% !important; }
+    }
+    
+    .sow-slider-images {
+        padding: 0;
+    }
+        
+    .sow-slider-image-wrapper {
+        position: relative;
+        padding-bottom: 2rem !important;
+        margin:  3rem 5rem !important;
+        width: 50%;
+        background: $white;
+        border: $border-width solid $black;
+        
+        img {
+            position: absolute;
+            top: -1.5rem;
+            left: -2.5rem;
+            width: 5rem !important;
+            height: 5rem !important;
+            
+        }
+    }
     
     .key-features {
         padding: 0;
@@ -96,13 +128,13 @@
     .widget.contact-area {
         position: relative;
         padding: 1rem 2rem 1rem 7rem;
-        align-self: flex-end;
+        flex: 1 0 auto;
         color:$white;
-        background: $green;
+        background: darken($green, 5);
         
         &:before {
-            position: absolute;
-            left: 1rem;
+            position: relative;
+            left: -5rem;
             content: '';
             width: 5rem;
             height: 5rem;
@@ -110,9 +142,15 @@
             background: url(#{$customer-service-icon}), no-repeat;
             background-size: contain;
         }
+    }
+}
+
+.category {
+    
+    .welcome {
         
-        p {
-            font-size: 0.85rem;
+        h3 {
+            color: $white;
         }
     }
 }

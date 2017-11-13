@@ -146,7 +146,7 @@ function widgets_init() {
 
     register_sidebar( [
         'name' => __( 'Members Call To Action', 'sage' ),
-        'id' => 'member-c2a',
+        'id' => 'member-ca',
         'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',

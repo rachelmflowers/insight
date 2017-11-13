@@ -23,16 +23,21 @@ small {
     font-size: .68rem;
 }
 
-h2 {
-    margin-bottom: 1.5rem;
+h2 { 
+    color: $indigo;
+    margin-bottom: 2rem;
 }
 
-h3 { color: $indigo; }
+h3 {
+    margin-bottom: 1rem;
+}
 
 h4,
 h5,
 h6 {
+    margin-bottom: 1rem;
     font-family: $font-family-base;
+    font-weight: bold;
 }
 
 .row {

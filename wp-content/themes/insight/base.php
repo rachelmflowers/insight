@@ -22,21 +22,14 @@ use Roots\ Sage\ Wrapper;
         <nav class="nav__secondary">
             <?php
             $page_template = get_page_template_slug();
-            $id = get_the_ID();
             echo $id;
             if ( is_page() ) {
                 echo wp_nav_menu( [ 'theme_location' => 'home_navigation', 'menu_class' => 'nav' ] );
             } else {
-                
-                $cat = the_category();
-                echo $cat;
-                echo $page_template;
+                $cat = "";
                 $cats = get_the_category();
-                
-//                print_r($cats);
                 if ($cats) {
                     $cat = strtolower($cats[0]->name);
-                    echo $cat;
                     echo wp_nav_menu( [ 'theme_location' => $cat . '_navigation', 'menu_class' => 'nav' ] );
                 }
             } 
