@@ -46,13 +46,29 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
     </svg>
     </div>
     <aside>
-        <div class="info"><?php dynamic_sidebar("{$category}-intro"); ?></div>
+        <form class="login">
+            <fieldset>
+                <legend><?=$category?> login</legend>
+                <div class="form-group">
+                    <input type="text" id="userid" name="userid" />
+                    <label for="userid">Login ID</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" />
+                    <label for="password">Password</label>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn">Submit</button>
+        </form>
         <?php dynamic_sidebar("{$category}-ca"); ?>
     </aside>
 </section>
 
 <div class="page-footer">
-    <?php dynamic_sidebar('chat-message'); ?>
+    <div class="info">
+        <?php dynamic_sidebar("{$category}-intro"); ?>
+    </div>
+    <?php //dynamic_sidebar('chat-message'); ?>
     <?php dynamic_sidebar('audience-contact'); ?>
 </div>
 
