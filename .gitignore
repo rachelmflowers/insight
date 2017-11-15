@@ -80,3 +80,4 @@ Thumbs.db
 !wp-content/mu-plugins/example-mu-plugin/
 !wp-content/plugins/example-plugin/
 !wp-content/themes/insight/
+!wp-content/themes/insight/dist/**/*
