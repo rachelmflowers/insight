@@ -132,6 +132,8 @@
         }
     }
     
+    .intro { max-width: 600px; }
+    
     #snowflake {
         position: absolute;
         right: -20%;
@@ -143,26 +145,17 @@
         width: 30%;
         display: flex;
         flex-flow: column nowrap;
-        
-        .call-to-action {
-            padding: 1rem;
-            text-align: center;
-            flex: 1 0 auto;
-            
-            h3 { margin-bottom: 1rem; }
-        }
     }
         
-    .info {
-        padding: 1.5rem 1rem;
-        width: 50%;
-        color: $body-color;
-        background: none;
-        border-top: 4px solid $black;
-        border-right: 4px solid $black;
+    .call-to-action {
+        padding: 1rem;
+        text-align: center;
+        flex: 1 0 auto;
+
+        h3 { margin-bottom: 1rem; }
     }
     
-    .chat-area,
+    .quick-links,
     .contact-area {
         position: relative;
         padding: 3rem 1rem 1rem;
@@ -182,7 +175,6 @@
         h2 { margin-bottom: 0; }
     }
     
-    .chat-area:before { background-image: url(#{$contact-icon}); }
     
     .contact-area{
         background: $purple;
@@ -200,7 +192,7 @@
         
         .call-to-action { background: $teal; }
         
-        .chat-area { background: $green; }
+        .quick-links { background: $green; }
         
         .contact-area { background: $blue; }
     }
@@ -211,7 +203,7 @@
         
         .call-to-action { background: $indigo; }
         
-        .chat-area { background: $green; }
+        .quick-links { background: $green; }
     }
     
     &.agents-page {
@@ -220,7 +212,7 @@
         
         .call-to-action { background: $indigo; }
         
-        .chat-area { background: $blue; }
+        .quick-links { background: $blue; }
     }
     
     &.providers-page {
@@ -229,6 +221,6 @@
         
         .call-to-action { background: $green; }
         
-        .chat-area { background: $blue; }
+        .quick-links { background: $blue; }
     }
 }

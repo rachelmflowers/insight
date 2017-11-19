@@ -12,8 +12,8 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
 <section class="main-content">
     <div class="welcome">
         <h1>Welcome.</h1>
-        <h3>Insight's self service portal <br /> <?= $welcome_text ?>.</h3>
-        <p>Our 24/7 secure access to all of your information.
+        <h3>Insight's self service portal <?= $welcome_text ?>.</h3>
+        <?php dynamic_sidebar("{$category}-intro"); ?>
         <svg version="1.1" id="snowflake" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="444.5px" height="451.2px" viewBox="0 0 444.5 451.2" style="enable-background:new 0 0 444.5 451.2;" xml:space="preserve"
 	>
@@ -69,9 +69,8 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
 
 <div class="page-footer">
     <div class="info">
-        <?php dynamic_sidebar("{$category}-intro"); ?>
     </div>
-    <?php //dynamic_sidebar('chat-message'); ?>
+    <?php dynamic_sidebar("{$category}-quick-links"); ?>
     <?php dynamic_sidebar('audience-contact'); ?>
 </div>
 
