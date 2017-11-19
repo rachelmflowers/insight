@@ -61,7 +61,6 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
             <button type="submit" class="btn btn-dark btn-sm px-4">Submit</button>
         </form>
         <div class="call-to-action">
-        <?= $category ?>
         <?php dynamic_sidebar("{$category}_ca"); ?>
         </div>
     </aside>

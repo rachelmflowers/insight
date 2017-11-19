@@ -13,8 +13,7 @@ class c2a extends WP_Widget {
         $title = empty( $instance[ 'title' ] ) ? 'Ready to begin?' : apply_filters( 'widget_title', $instance[ 'title' ] );
         $buttonText = empty( $instance[ 'buttonText' ] ) ? 'Request a quote' : $instance[ 'buttonText' ];
         $buttonLink = empty( $instance[ 'buttonLink' ] ) ? 'http://insightba.net/' : $instance[ 'buttonLink' ];
-        
-        echo "test";
+
         // before and after widget arguments are defined by themes
         echo $args[ 'before_widget' ];
         echo $args[ 'before_title' ] . $title . $args[ 'after_title' ];

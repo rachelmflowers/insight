@@ -109,14 +109,14 @@ function widgets_init() {
 
     register_sidebar( [
         'name' => __( 'Members Intro', 'sage' ),
-        'id' => 'member-intro',
+        'id' => 'members-intro',
         'before_widget' => '<section class="widget intro %1$s %2$s">',
-        'after_widget' => '</section>',
+        'after_widget' => '</section>'
     ] );
 
     register_sidebar( [
         'name' => __( 'Members Quick Links', 'sage' ),
-        'id' => 'member-quick-links',
+        'id' => 'members-quick-links',
         'before_widget' => '<section class="widget quick-links %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h2>',
@@ -125,83 +125,7 @@ function widgets_init() {
 
     register_sidebar( [
         'name' => __( 'Members Call To Action', 'sage' ),
-        'id' => 'member_ca',
-        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Employers Intro', 'sage' ),
-        'id' => 'employer-intro',
-        'before_widget' => '<section class="widget intro %1$s %2$s">',
-        'after_widget' => '</section>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Employers Quick Links', 'sage' ),
-        'id' => 'employer-quick-links',
-        'before_widget' => '<section class="widget quick-links %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Employers Call To Action', 'sage' ),
-        'id' => 'employer_ca',
-        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ] );
-
-
-    register_sidebar( [
-        'name' => __( 'Agents Intro', 'sage' ),
-        'id' => 'agent-intro',
-        'before_widget' => '<section class="widget intro %1$s %2$s">',
-        'after_widget' => '</section>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Agents Quick Links', 'sage' ),
-        'id' => 'agent-quick-links',
-        'before_widget' => '<section class="widget quick-links %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
-    ] );
-    
-    register_sidebar( [
-        'name' => __( 'Agents Call To Action', 'sage' ),
-        'id' => 'agent_ca',
-        'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Providers Intro', 'sage' ),
-        'id' => 'provider-intro',
-        'before_widget' => '<section class="widget intro %1$s %2$s">',
-        'after_widget' => '</section>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Providers Quick Links', 'sage' ),
-        'id' => 'provider-quick-links',
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
-    ] );
-
-    register_sidebar( [
-        'name' => __( 'Providers Call To Action', 'sage' ),
-        'id' => 'provider_ca',
+        'id' => 'members_ca',
         'before_widget' => '<section class="widget call-to-action %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',

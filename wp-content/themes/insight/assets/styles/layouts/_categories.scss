@@ -132,7 +132,7 @@
         }
     }
     
-    .intro { max-width: 600px; }
+    .intro { max-width: 550px; }
     
     #snowflake {
         position: absolute;
@@ -157,9 +157,34 @@
     
     .quick-links,
     .contact-area {
-        position: relative;
-        padding: 3rem 1rem 1rem;
         color: $white;
+        
+        h2 {
+            margin-bottom: 1rem;
+            color: $white;
+        }
+    }
+    
+    .quick-links {
+        padding: 3rem 2rem 1rem;
+        min-width: 33%;
+        border-top: 4px solid $black;
+        border-right: 4px solid $black;
+        
+        .menu {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            
+            a { color: $white; }
+        }
+    }
+    
+    .contact-area {
+        padding: 3rem 1rem 1rem;
+        position: relative;
+        flex: 1 0 auto;
+        background: $purple;
         
         &:before {
             position: absolute;
@@ -168,18 +193,10 @@
             width: 5rem;
             height: 5rem;
             content: '';
+            background-image: url(#{$customer-service-icon});
             background-repeat: no-repeat;
             background-size: contain;
         }
-        
-        h2 { margin-bottom: 0; }
-    }
-    
-    
-    .contact-area{
-        background: $purple;
-        
-        &:before { background-image: url(#{$customer-service-icon}); }
     }
     
     &.members-page {
