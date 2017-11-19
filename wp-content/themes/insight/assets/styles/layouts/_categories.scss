@@ -1,24 +1,21 @@
 .login-box {
     padding: 2rem 2rem 1rem;
-    margin: 0 auto;
-    width: 35vw;
-    min-width: 300px;
     color: $white;
     text-align: center;
-    border: 7px solid $black;
+    border-bottom: $border-width solid $black;
         
     .providers-page &,
     .agents-page & {
         color: $black;
     }
 
-    .members-page & { background: $purple; }
+    .members-page & { background: $teal; }
 
-    .employers-page & { background: $blue; }
+    .employers-page & { background: $green; }
 
-    .providers-page & { background: $teal; }
+    .providers-page & { background: $green; }
 
-    .agents-page & { background: $green; }
+    .agents-page & { background: $purple; }
 
     h2 { margin-bottom: 1rem; }
 
@@ -43,44 +40,44 @@
         margin-bottom: 3rem;
     }
 
-    .um {
-        margin-bottom: 0 !important;
-        
-        + a,
-        + a + a {
-            margin-top: -1.6rem;
-        }
-    }
-    
-    .um-register { display: none; }
-
-    .um-form {
-        padding-left: 4rem;
-        padding-right: 4rem;
-        font-size: 1rem !important;
-
-        > p { text-align: left; }
-
-        a.um-link-alt { 
-            color: $white !important;
-        
-            .providers-page &,
-            .agents-page & {
-                color: $black !important;
-            }
-        }
-
-        #um-submit-btn {
-            padding: 0.4rem 2rem !important;
-            margin: 0 auto 2rem;
-            min-width: 0 !important;
-            text-transform: uppercase !important;
-            border: 0 !important;
-            border-radius: 0 !important;
-        }
-    }
-
-    .um-form-field { width: 100%; }
+//    .um {
+//        margin-bottom: 0 !important;
+//        
+//        + a,
+//        + a + a {
+//            margin-top: -1.6rem;
+//        }
+//    }
+//    
+//    .um-register { display: none; }
+//
+//    .um-form {
+//        padding-left: 4rem;
+//        padding-right: 4rem;
+//        font-size: 1rem !important;
+//
+//        > p { text-align: left; }
+//
+//        a.um-link-alt { 
+//            color: $white !important;
+//        
+//            .providers-page &,
+//            .agents-page & {
+//                color: $black !important;
+//            }
+//        }
+//
+//        #um-submit-btn {
+//            padding: 0.4rem 2rem !important;
+//            margin: 0 auto 2rem;
+//            min-width: 0 !important;
+//            text-transform: uppercase !important;
+//            border: 0 !important;
+//            border-radius: 0 !important;
+//        }
+//    }
+//
+//    .um-form-field { width: 100%; }
 }
 
 .category { 
@@ -147,13 +144,6 @@
         display: flex;
         flex-flow: column nowrap;
         
-        .info {
-            padding: 1.5rem 1rem;
-            color: $body-color;
-            background: none;
-            border-bottom: 4px solid $black;
-        }
-        
         .call-to-action {
             padding: 1rem;
             text-align: center;
@@ -161,6 +151,15 @@
             
             h3 { margin-bottom: 1rem; }
         }
+    }
+        
+    .info {
+        padding: 1.5rem 1rem;
+        width: 50%;
+        color: $body-color;
+        background: none;
+        border-top: 4px solid $black;
+        border-right: 4px solid $black;
     }
     
     .chat-area,
@@ -195,7 +194,7 @@
         
         .welcome { background: $purple }
         
-        .info { 
+        .login-box { 
             color: $white;
             background: $indigo; }
         
