@@ -65,7 +65,6 @@ address { margin-bottom: 0; }
     }
     
     &.wrap {
-        min-height: calc(100vh - 13rem);
         display: flex;
         flex-flow: column nowrap;
     }

