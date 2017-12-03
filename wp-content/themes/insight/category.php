@@ -49,6 +49,9 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
         <form class="login-box">
             <fieldset>
                 <legend><?=ucfirst($category)?> login</legend>
+                <p>Click the button below to login into our portal to view your personal benefits and healthcare information.</p>
+                <a href="//in.activabenefits.com/lin/faces/LinLogin.jsp" class="btn btn-dark btn-sm px-4">Access my benefits</a>
+<!--
                 <div class="form-group">
                     <label for="userid" class="sr-only">Login ID</label>
                     <input type="text" id="userid" name="userid" class="form-control" placeholder="Login ID" />
@@ -57,8 +60,9 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
                 </div>
+-->
             </fieldset>
-            <button type="submit" class="btn btn-dark btn-sm px-4">Submit</button>
+<!--            <button type="submit" class="btn btn-dark btn-sm px-4">Submit</button>-->
         </form>
         <div class="call-to-action">
         <?php dynamic_sidebar("{$category}_ca"); ?>
@@ -67,8 +71,6 @@ $welcome_text = is_category( '10' ) ? "to your benefits" : "for {$category}";
 </section>
 
 <div class="page-footer">
-    <div class="info">
-    </div>
     <?php dynamic_sidebar("{$category}-quick-links"); ?>
     <?php dynamic_sidebar('audience-contact'); ?>
 </div>

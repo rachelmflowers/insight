@@ -221,7 +221,10 @@ function display_sidebar() {
         is_404(),
         is_front_page(),
         is_page_template( 'template-home.php' ),
-        is_category()
+        is_category(),
+        is_search(),
+        is_page('Privacy Terms & Conditions'),
+        is_page('Contacts for Employers + Agents')
     ] );
 
     return apply_filters( 'sage/display_sidebar', $display );

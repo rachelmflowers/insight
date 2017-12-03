@@ -1,6 +1,18 @@
 .main {
     
-    .page:not(.home) & { padding: 1rem 4rem; }
+    .page:not(.home) &,
+    .search & {
+        padding: 1rem 1.5rem;
+    
+        @include media-breakpoint-up(md) {
+            padding: 1rem 4rem;
+        }
+        
+        article {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid gray(300);
+        }
+    }
 }
 
     
@@ -11,7 +23,10 @@
     
 @include media-breakpoint-up(md) {
     
-    .page-footer { display: flex; }
+    .page-footer { 
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 .welcome-message,
@@ -20,7 +35,6 @@
     border-top: 4px solid $black;
     
     @include media-breakpoint-up(md) {
-        width: 50%;
         float: left;
     }
     
@@ -35,6 +49,7 @@
 .chat-area {
     
     @include media-breakpoint-up(md) {
+        width: 66.67%;
         border-right: 4px solid $black;
     }
 }
@@ -47,11 +62,15 @@
     }
     
     .so-widget-sow-hero {
-        height: 27rem;
         
-        .sow-slider-base,
-        .sow-slider-images,
-        .sow-slider-image { height: 100% !important; }
+    
+        @include media-breakpoint-up(md) {
+            height: 27rem;
+        
+            .sow-slider-base,
+            .sow-slider-images,
+            .sow-slider-image { height: 100% !important; }
+        }
     }
     
     .sow-slider-images {
@@ -59,20 +78,48 @@
     }
         
     .sow-slider-image-wrapper {
-        position: relative;
         padding-bottom: 2rem !important;
-        margin:  3rem 5rem !important;
-        width: 50%;
-        background: $white;
-        border: $border-width solid $black;
+        background: rgba($white, 0.5);
+        
+        > p:first-child { margin: 0 !important; }
         
         img {
-            position: absolute;
-            top: -1.5rem;
-            left: -2.5rem;
+            float: left;
             width: 5rem !important;
             height: 5rem !important;
-            
+
+        }
+        
+        h2 { 
+            padding-left: 6rem;
+            margin: 0 !important;
+            min-height: 5rem;
+            font-size: 2rem !important;
+        }
+    
+        @include media-breakpoint-up(md) {
+            width: 70%;
+            margin: 3rem 5rem !important;
+            background: rgba($white, 0.75);
+            border: $border-width solid $black;
+        
+            img {
+                position: absolute;
+                top: 6rem;
+                right: 10rem;
+                width: 15rem !important;
+                height: 15rem !important;
+            }
+        
+            h2 {
+                padding-left: 0;
+                margin-top: 1rem !important;
+                min-height: 0;
+            }
+        }
+    
+        @include media-breakpoint-up(lg) {
+            width: 50%;
         }
     }
     
@@ -127,20 +174,32 @@
     
     .widget.contact-area {
         position: relative;
-        padding: 1rem 2rem 1rem 7rem;
-        flex: 1 0 auto;
+        padding: 2rem;
         color:$white;
         background: darken($green, 5);
         
         &:before {
-            position: relative;
-            left: -5rem;
-            content: '';
             width: 5rem;
             height: 5rem;
             display: block;
+            content: '';
             background: url(#{$customer-service-icon}), no-repeat;
             background-size: contain;
+        }
+        
+        @include media-breakpoint-up(md) {
+            width: 33.33%;
+            
+            &:before {
+                position: absolute;
+                top: 1rem;
+                left: -2.5rem;
+            }
+            
+            h4 { 
+                padding-left: 1rem;
+                height: 4rem;
+            }
         }
     }
 }
@@ -153,4 +212,11 @@
             color: $white;
         }
     }
+}
+
+.sow-image-grid-image {
+    vertical-align: middle;
+    filter: grayscale(100);
+    
+    &:hover { filter: none; }
 }

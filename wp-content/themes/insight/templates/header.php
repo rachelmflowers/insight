@@ -7,11 +7,11 @@
                 </strong>
             </span>
             
-            <a class="contact-email" href="mailto:email@email.com">
+            <a class="contact-email" href="mailto:salesandmarketing@insightba.net">
                 <i class="fa fa-envelope"></i>
             </a>
             
-            <a class="contact-social" href="">
+            <a class="contact-social" href="https://www.linkedin.com/company/10823502/">
                 <i class="fa fa-linkedin-square"></i>
             </a>
             
@@ -30,7 +30,6 @@
             <?php
         }
         ?>
-        <button type="button" class="nav-trigger dl-trigger dl-active"><i class="fa fa-reorder"></i></button>
 
         <?php
         if ( has_nav_menu( 'primary_navigation' ) ) :

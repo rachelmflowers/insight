@@ -1,32 +1,23 @@
 .login-box {
-    padding: 2rem 2rem 1rem;
+    padding: 2rem;
     color: $white;
     text-align: center;
     border-bottom: $border-width solid $black;
-        
-    .providers-page &,
-    .agents-page & {
-        color: $black;
+
+    legend {
+        line-height: 1;
+        margin-bottom: 1rem;
     }
-
-    .members-page & { background: $teal; }
-
-    .employers-page & { background: $green; }
-
-    .providers-page & { background: $green; }
-
-    .agents-page & { background: $purple; }
-
-    h2 { margin-bottom: 1rem; }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+    }
 
     a {
         color: $white;
         text-transform: uppercase;
-        
-        .providers-page &,
-        .agents-page & {
-            color: $black;
-        }
     }
 
     > a {
@@ -35,6 +26,7 @@
 
         &:last-of-type { float: right; }
     }
+    
     
     .alert {
         margin-bottom: 3rem;
@@ -87,10 +79,6 @@
 //        height: 100vh;
 //        overflow: hidden;
 //    }
-    
-    .main {
-        position: relative;
-    }
 
     .overlay {
         position: absolute;
@@ -107,25 +95,31 @@
     }
     
     .main {
+        position: relative;
         flex-flow: column nowrap;
     }
     
     .main-content {
         width: 100%;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         color: $white;
     }
     
     .welcome {
         position: relative;
         padding: 3rem;
-        width: 70%;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        border-right: 4px solid $black;
+        border-bottom: 4px solid $black;
         overflow: hidden;
+        
+        @include media-breakpoint-up(md) {
+            width: 70%;
+            border-right: 4px solid $black;
+            border-bottom: none;
+        }
         
         h3 {
             margin-bottom: 3rem;
@@ -143,6 +137,7 @@
     
     aside {
         width: 30%;
+        flex: 1 0 auto;
         display: flex;
         flex-flow: column nowrap;
     }
@@ -166,10 +161,14 @@
     }
     
     .quick-links {
-        padding: 3rem 2rem 1rem;
+        padding: 1rem 2rem;
         min-width: 33%;
         border-top: 4px solid $black;
-        border-right: 4px solid $black;
+        
+        @include media-breakpoint-up(md) {
+            padding-top: 3rem;
+            border-right: 4px solid $black;
+        }
         
         .menu {
             padding: 0;
@@ -181,21 +180,44 @@
     }
     
     .contact-area {
-        padding: 3rem 1rem 1rem;
+        padding: 1rem;
         position: relative;
-        flex: 1 0 auto;
+        flex: 1 0 50%;
         background: $purple;
+            
+        h2 { 
+            margin-top: .5rem;
+            min-height: 2.5rem;
+        }
+        
+        @include media-breakpoint-up(md) {
+            padding-top: 3rem;
+            
+            h2 {
+                min-height: 0;
+                margin-top: 0;
+            }
+        }
         
         &:before {
-            position: absolute;
-            top: -2.5rem;
-            left: 1.5rem;
-            width: 5rem;
-            height: 5rem;
+            margin-top: -.5rem;
+            margin-right: .5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            float: left;
             content: '';
             background-image: url(#{$customer-service-icon});
             background-repeat: no-repeat;
             background-size: contain;
+        
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: -2.5rem;
+                left: 1.5rem;
+                margin: 0;
+                width: 5rem;
+                height: 5rem;
+            }
         }
     }
     
@@ -203,9 +225,7 @@
         
         .welcome { background: $purple }
         
-        .login-box { 
-            color: $white;
-            background: $indigo; }
+        .login-box { background: $indigo; }
         
         .call-to-action { background: $teal; }
         
@@ -217,6 +237,8 @@
     &.employers-page {
         
         .welcome { background: $blue }
+
+        .login-box { background: $teal; }
         
         .call-to-action { background: $indigo; }
         
@@ -226,17 +248,21 @@
     &.agents-page {
         
         .welcome { background: $green }
+
+        .login-box { background: $blue; }
         
         .call-to-action { background: $indigo; }
         
-        .quick-links { background: $blue; }
+        .quick-links { background: $teal; }
     }
     
     &.providers-page {
         
         .welcome { background: $teal }
+
+        .login-box { background: $green; }
         
-        .call-to-action { background: $green; }
+        .call-to-action { background: $indigo; }
         
         .quick-links { background: $blue; }
     }
